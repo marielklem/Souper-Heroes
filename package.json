@@ -1,0 +1,17 @@
+{
+  "name": "souper-heros",
+  "version": "1.0.0",
+  "description": "App used to assist food pantries with shopping and distribution of food to clients with transportation barriers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Mariel Klem",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4"
+  }
+}
