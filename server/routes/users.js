@@ -1,5 +1,5 @@
-const router = require('express').Router()
-const User = require('../server/models/users')
+// const router = require('express').Router()
+// const User = require('../server/models/users')
 
 // Find the id of the user
 

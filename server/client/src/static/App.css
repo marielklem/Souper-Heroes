@@ -1,0 +1,12 @@
+.logo {
+  font-family: 'Bangers', cursive;
+}
+
+.img-logo {
+  width: 30px;
+}
+
+.header {
+  max-width: 100%;
+  height: auto
+}
