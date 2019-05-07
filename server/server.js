@@ -18,10 +18,12 @@ app.use(bodyParser.urlencoded({
 }))
 
 const productRoutes = require('./routes/products')
+const categoryRoutes = require('./routes/categories')
 const userRoutes = require('./routes/users')
 
 app.use('/products', productRoutes)
 app.use('/profile', userRoutes)
+app.use('/categories', categoryRoutes)
 
 app.listen(8000, () => {
   console.log('Node.js listening on port ' + 8000)

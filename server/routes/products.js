@@ -42,13 +42,4 @@ router.post('/', (req, res) => {
   res.send(`The following product was successfully added: ${newProduct}`)
 })
 
-// get all categories
-router.get('/categories', (req, res, next) => {
-  Product
-    .find({
-
-    })
-
-});
-
 module.exports = router

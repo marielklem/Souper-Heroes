@@ -14,29 +14,33 @@ class Categories extends Component {
 
 
   render() {
-    console.log(this.props.inventory)
-    if (!this.props.inventory) {
+    if (this.props.inventory.length === 0) {
       return (
         <div>...loading</div>
       )
     }
-    console.log(this.props)
-    return (
-      <div>
-        <div id="accordion" style={{'padding': '10px'}}>
-          <div className="card">
-            <div className="card-header" id="categories">
-              <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Vegetables
-              </button>
-            </div>
-            <div id="collapseOne" className="collapse show" aria-labelledby="categories" data-parent="#accordion">
-              <Products />
+    return this.props.inventory.map (item => {
+      return (
+        <div>
+          <div id="accordion" style={{'padding': '10px'}}>
+            <div className="card">
+              <div className="card-header" id="categories">
+                <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  {item.category}
+                </button>
+              </div>
+              <div id="collapseOne" className="collapse show" aria-labelledby="categories" data-parent="#accordion">
+              <ul className="row">
+              <Products products={this.props.inventory} />
+              </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    )
+
+
+      )
+    })
   }
 }
 
