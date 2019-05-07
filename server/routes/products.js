@@ -12,7 +12,7 @@ router.param('product', function (req, res, next, id) {
   })
 })
 
-// get all products ()
+// GET all products ()
 router.get('/', (req, res, next) => {
   Product
   .find({}, (err, inventory) => {
@@ -20,16 +20,21 @@ router.get('/', (req, res, next) => {
   })
 })
 
-// post a single product (for admin to update inventory quantity)
-router.put('/', (req, res) => {
+//PUT product (update quantity available)
+router.put('/:id', (req, res) => {
+  var newQuantity = req.body.limit
 
-  Product
-    .updateOne({quantity : req.body.quantity})
-
-  res.send(`The following product was successfully added: ${newProduct}`)
+  Product.findByIdAndUpdate(
+    req.params.id, 
+    { quantity : newQuantity}, 
+    (err, product) => {
+      if (err) throw err;
+      else console.log(product)
+    })
+  res.send(`The ${req.product.name} was successfully updated`)
 })
 
-// post products (for admin to add new inventory)
+// POST products (for admin to add new inventory)
 router.post('/', (req, res) => {
   let newProduct = new Product({
     category : req.body.category,

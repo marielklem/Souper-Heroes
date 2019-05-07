@@ -1,6 +1,27 @@
 import React, { Component } from 'react'
 
 class Products extends Component {
+  state = {}
+
+  //add one item to cart on each click
+  addToCart = (item) => {
+    if (item.name in this.state) {
+      const qty = parseInt(this.state[item.name]) + 1
+      this.setState({[item.name] : qty})
+    } else {
+      this.setState({[item.name]: 1})
+    }
+  }
+  //subtract one item from cart on click
+  subtractFromCart = (item) => {
+    if (item.name in this.state) {
+      const qty = parseInt(this.state[item.name]) - 1
+      this.setState({[item.name] : qty})
+    } else {
+      this.setState({[item.name]: 1})
+    }
+  }
+
   render() {
     if (this.props.products.length === 0) {
     }
@@ -10,18 +31,10 @@ class Products extends Component {
         <div className="card">
           <img className="card-img-top" src={item.image} alt="food item" />
           <h5 className="card-title" style={{'textAlign': 'center'}}>{item.name}</h5>
-            <div className="input-group">
-            <span className="input-group-btn">
-              <button type="button" className="btn btn-default btn-number">
-                <i className="fas fa-minus"/>
-              </button>
-            </span>
-             <input type="text" className="form-control input-number" />
-            <span className="input-group-btn">
-              <button type="button" className="btn btn-default btn-number">
-                <i className="fas fa-plus"/>
-              </button>
-            </span>
+          <div className="qty mt-5">
+            <span className="minus bg-secondary" onClick={() => this.subtractFromCart(item)}>-</span>
+            <input type="number" className="count" name={item.name} value={this.state[item.name] || 0} />
+            <span className="plus bg-secondary" onClick={() => this.addToCart(item)}>+</span>
           </div>
         </div>
       </li>
