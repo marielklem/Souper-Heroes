@@ -5,12 +5,24 @@ import * as actionTypes from "../actions";
 import Products from "./Products"
 
 class Categories extends Component {
-
-
   //on page load, fetch all products
   componentDidMount() {
     this.props.fetchCategories();
     this.props.fetchProducts();
+  }
+
+  addProducts(category) {
+    if (this.props.inventory.length === 0) {
+      return(<div>...loading</div>)
+    }
+    const filterByCategory = this.props.inventory.filter(product => {
+      return (product.category === category.name)
+    })
+    return (
+      <ul className="row">
+        <Products products={filterByCategory} />
+      </ul>
+    )
   }
 
 
@@ -20,10 +32,9 @@ class Categories extends Component {
         <div>...loading</div>
       )
     }
-    console.log(this.props.categories)
     return this.props.categories.map (category => {
       return (
-        <div>
+        <div key={category._id}>
           <div id="accordion" style={{'padding': '10px'}}>
             <div className="card">
               <div className="card-header" id="categories">
@@ -32,9 +43,7 @@ class Categories extends Component {
                 </button>
               </div>
               <div id="collapseOne" className="collapse show" aria-labelledby="categories" data-parent="#accordion">
-              <ul className="row">
-              <Products products={this.props.inventory} />
-              </ul>
+              {this.addProducts(category)}
               </div>
             </div>
           </div>

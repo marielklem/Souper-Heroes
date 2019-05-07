@@ -4,10 +4,9 @@ class Products extends Component {
   render() {
     if (this.props.products.length === 0) {
     }
-
     return this.props.products.map (item => {
     return (
-      <li className="col-5 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+      <li className="col-5 col-sm-6 col-md-4 col-lg-2 col-xl-2" key={item._id}>
         <div className="card">
           <img className="card-img-top" src={item.image} alt="food item" />
           <h5 className="card-title" style={{'textAlign': 'center'}}>{item.name}</h5>
