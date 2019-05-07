@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
-mongoose.connect('mongodb://localhost/products', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/souper-heros', { useNewUrlParser: true })
 
 const app =  express()
 
@@ -17,4 +17,6 @@ const userRoutes = require('./routes/users')
 app.use('/products', productRoutes)
 app.use('/profile', userRoutes)
 
-app.listen(8000)
+app.listen(8000, () => {
+  console.log('Node.js listening on port ' + 8000)
+})
