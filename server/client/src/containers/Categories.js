@@ -25,9 +25,12 @@ class Categories extends Component {
       return (product.category === category.name)
     })
     return (
-      <ul className="row">
-        <Products products={filterByCategory} category={category} />
-      </ul>
+      <div className="container">
+        <ul className="row">
+          <Products products={filterByCategory} category={category} />
+        </ul>
+      </div>
+      
     )
   }
 
@@ -39,14 +42,15 @@ class Categories extends Component {
     }
     return this.props.categories.map (category => {
       return (
-        <div key={category._id}>
+        <div key={category._id} className="container">
         {() => this.setCart(category.name)}
-          <div id="accordion" style={{'padding': '10px'}}>
+          <div id="accordion" style={{'padding': '10px'}} className="row">
             <div className="card">
               <div className="card-header" id="categories">
-                <button className="btn btn-link category-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h1 className="btn btn-link category-title col-6" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   {category.name}
-                </button>
+                </h1>
+                <span className="col-6" style={{'float': 'right'}}>(limit: {category.limit})</span>
               </div>
               <div id="collapseOne" className="collapse show" aria-labelledby="categories" data-parent="#accordion">
               <div className="panel-body">

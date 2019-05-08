@@ -26,6 +26,10 @@ ul{
   margin-bottom: 10px;
   padding: 10px;
 }
+.card-title {
+  text-align: center;
+  height: 40px
+}
 
 /* Counter */
 .qty .count {
@@ -62,8 +66,11 @@ ul{
     border-radius: 50%;
     /* background-clip: padding-box; */
 }
-div {
+.qty {
     text-align: center;
+}
+span {
+  text-align: right;
 }
 .minus:hover{
   background-color: #01b7ff !important;
