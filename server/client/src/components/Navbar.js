@@ -29,7 +29,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand className="logo" href="/"><img className="img-logo" src={logo} alt="Super hero logo" /> Souper Heros</NavbarBrand>
+          <NavbarBrand className="logo" href="/"><img className="img-logo" src={logo} alt="Super hero logo" /> Souper Heroes</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

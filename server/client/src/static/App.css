@@ -30,6 +30,7 @@ ul{
 }
 .card-title {
   text-align: center;
+  vertical-align: center;
   padding: 10px;
   height: 40px
 }

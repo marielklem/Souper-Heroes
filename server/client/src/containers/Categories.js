@@ -11,11 +11,6 @@ class Categories extends Component {
     
   }
 
-  setCart = (category) => {
-    this.setState({ [category] : []})
-    console.log(this.state)
-  }
-
   //for each category, add all matching products
   addProducts(category) {
     if (this.props.inventory.length === 0) {
@@ -43,7 +38,6 @@ class Categories extends Component {
     return this.props.categories.map (category => {
       return (
         <div key={category._id} className="container">
-        {() => this.setCart(category.name)}
           <div id="accordion" style={{'padding': '10px'}} className="row">
             <div className="card">
               <div className="card-header" id="categories">

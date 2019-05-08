@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_PRODUCTS = 'fetch_products';
 export const FETCH_CATEGORIES = 'fetch_categories';
+export const UPDATE_CART = 'updateCart'
 
 export const fetchProducts = () => {
   const request = axios.get('http://localhost:8000/products', {})
@@ -20,6 +21,10 @@ export const fetchCategories = () => {
   }
 }
 
-export const updateCart = item => {
-  console.log(item)
+export const updateCart = (items, category) => {
+  const data = {[category]: items}
+  return {
+    type: UPDATE_CART,
+    payload: data
+  }
 }

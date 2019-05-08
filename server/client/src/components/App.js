@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import '../static/App.css';
 import Navbar from "../components/Navbar"
 import Categories from "../containers/Categories"
+import Profile from "../containers/Profile"
 
 function App() {
   
@@ -11,6 +12,9 @@ function App() {
       <Navbar />
       <Switch>
         <Categories />
+      </Switch>
+      <Switch>
+        <Profile />
       </Switch>
     </BrowserRouter>
   );
