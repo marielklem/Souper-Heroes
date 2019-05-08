@@ -25,11 +25,11 @@ class Products extends Component {
   }
   //subtract one item from cart on click
   subtractFromCart = (item) => {
-    if (item.name in this.state) {
+    if (this.state[item.name] > 0) {
       const qty = parseInt(this.state[item.name]) - 1
       this.setState({[item.name] : qty})
     } else {
-      this.setState({[item.name]: 1})
+      this.setState({[item.name]: 0})
     }
   }
 
