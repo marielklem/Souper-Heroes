@@ -35,9 +35,13 @@ class Products extends Component {
   subtractFromCart = (item) => {
     if (this.state[item.name] > 0) {
       const qty = parseInt(this.state[item.name]) - 1
-      this.setState({[item.name] : qty})
+      this.setState({[item.name] : qty}, () => {
+        this.props.updateCart(this.state, this.props.category.name)
+      })
     } else {
-      this.setState({[item.name]: 0})
+      this.setState({[item.name]: 0}, () => {
+        this.props.updateCart(this.state, this.props.category.name)
+      })
     }
   }
 
@@ -52,7 +56,7 @@ class Products extends Component {
           <h5 className="card-title">{item.name}</h5>
           <div className="qty mt-5">
             <span className="minus bg-secondary" onClick={() => this.subtractFromCart(item)}>-</span>
-            <input type="number" className="count" name={item.name} value={this.state[item.name] || 0} />
+            <input type="number" className="count" name={item.name} value={this.state[item.name]} defaultValue="0" />
             <span className="plus bg-secondary" onClick={() => this.addToCart(item)}>+</span>
           </div>
         </div>

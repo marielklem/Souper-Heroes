@@ -1,15 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink } from 'reactstrap';
+  NavItem
+} from 'reactstrap';
 
 import logo from "../static/logo.png"
-import header from "../static/can-header.jpg"
+import header from "../static/market.jpg"
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -33,15 +34,9 @@ export default class Example extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/checkout/"><i className="fas fa-shopping-cart"></i></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/orderStatus"><i className="fas fa-bell"></i></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/profile"><i className="fas fa-user"></i></NavLink>
-              </NavItem>
+              <NavItem style={{'padding': '10px'}}><Link to="/checkout"><i className="fas fa-shopping-cart" /></Link></NavItem>
+              <NavItem style={{'padding': '10px'}}><Link to="/orderStatus"><i className="fas fa-bell"/></Link></NavItem>
+              <NavItem style={{'padding': '10px'}}><Link to="/profile"><i className="fas fa-user"/></Link></NavItem>
             </Nav>
           </Collapse>
         </Navbar>

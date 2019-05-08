@@ -4,6 +4,7 @@ import '../static/App.css';
 import Navbar from "../components/Navbar"
 import Categories from "../containers/Categories"
 import Profile from "../containers/Profile"
+import Checkout from "../containers/Checkout"
 
 function App() {
   
@@ -11,10 +12,10 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Categories />
-      </Switch>
-      <Switch>
-        <Profile />
+        <Route exact path="/" render={() => <Redirect to="/shop" />} />
+        <Route exact path ="/shop" render={() => <Categories />} />
+        <Route exact path ="/profile" render={() => <Profile />} />
+        <Route exact path ="/checkout" render={() => <Checkout />} />
       </Switch>
     </BrowserRouter>
   );
