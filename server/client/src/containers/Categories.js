@@ -26,7 +26,7 @@ class Categories extends Component {
     })
     return (
       <ul className="row">
-        <Products products={filterByCategory} />
+        <Products products={filterByCategory} category={category} />
       </ul>
     )
   }

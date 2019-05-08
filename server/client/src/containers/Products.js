@@ -5,6 +5,17 @@ class Products extends Component {
 
   //add one item to cart on each click
   addToCart = (item) => {
+    if (this.state.length !== 0) {
+      const limit = this.props.category.limit
+      let sum = 0
+      for (let key in this.state) {
+        sum += this.state[key]
+      }
+      if (sum >= limit){
+        throw alert (`Limit reached, please remove some ${item.category} from your cart to add this item`)
+      }
+   }
+
     if (item.name in this.state) {
       const qty = parseInt(this.state[item.name]) + 1
       this.setState({[item.name] : qty})
