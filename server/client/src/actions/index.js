@@ -19,3 +19,7 @@ export const fetchCategories = () => {
     payload: request
   }
 }
+
+export const updateCart = item => {
+  console.log(item)
+}

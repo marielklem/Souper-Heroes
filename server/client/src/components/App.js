@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import Categories from "../containers/Categories"
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Navbar />

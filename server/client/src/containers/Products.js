@@ -45,7 +45,7 @@ class Products extends Component {
         <div className="card">
           <img className="card-img-top" src={item.image} alt="food item" />
           <h5 className="card-title">{item.name}</h5>
-          <div className="qty mt-3">
+          <div className="qty mt-5">
             <span className="minus bg-secondary" onClick={() => this.subtractFromCart(item)}>-</span>
             <input type="number" className="count" name={item.name} value={this.state[item.name] || 0} />
             <span className="plus bg-secondary" onClick={() => this.addToCart(item)}>+</span>
