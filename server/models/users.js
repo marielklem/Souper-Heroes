@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Product = require('./product').schema
-
-//add intake form to user's profile
+const orderSchema = require('./orders').schema
 
 const UserSchema = new Schema ({
   name: String,
@@ -15,8 +13,8 @@ const UserSchema = new Schema ({
     gender: String,
     householdSize: Number,
   },
-  cart: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-  orderHistory: []
+  cart: [],
+  orderHistory: [ orderSchema ]
 })
 
 module.exports = mongoose.model('User', UserSchema)

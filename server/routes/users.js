@@ -27,8 +27,8 @@ router.post('/newUser', (req, res) => {
   let newUser = new User ({
     name: req.body.name,
     email: req.body.email,
-    image: req.body.imgUrl,
-    location: req.body.address,
+    image: req.body.image,
+    location: req.body.location,
     demographics: req.body.demographics
   })
   newUser.save()

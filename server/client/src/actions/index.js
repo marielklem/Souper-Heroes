@@ -35,7 +35,7 @@ export const updateCart = (items, category) => {
 
 //get profile information on a user
 export const fetchUser = () => {
-  const request = axios.get('http://localhost:8000/profile/5cd2f186c93c4937d8f970b0', {})
+  const request = axios.get('http://localhost:8000/profile/5cd4655d5f1771364079e3c2', {})
     return{
       type: FETCH_USER,
       payload: request

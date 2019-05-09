@@ -20,7 +20,7 @@ class Profile extends Component {
 
               <div className="side-bar">
                 <div className="user-info">
-                  <img className="img-profile img-circle img-responsive center-block"src={this.props.user.image} alt="user profile" />
+                  <img className="img-profile rounded-circle img-thumbnail img-responsive center-block"src={this.props.user.image} alt="user profile" />
                   <ul className="meta list list-unstyled">
                     <li className="name">{this.props.user.name}
                       {/* <label className="label label-info">Client</label> */}
@@ -46,13 +46,12 @@ class Profile extends Component {
                       <h3 className="fieldset-title">Personal Info</h3>
                       <div className="form-group row avatar">
                         <figure className="figure col-lg-2 col-md-2 col-sm-3 col-xs-12">
-                          <img className="img-rounded img-responsive" src={this.props.user.image} alt=""/>
+                          <img className="img-responsive img-thumbnail" src={this.props.user.image} alt=""/>
                         </figure>
                         <div className="form-inline col-lg-4 col-md-4 col-sm-8 col-xs-1">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input inputGroup-sizing-sm" id="inputGroup-sizing-sm"
-                              aria-describedby="inputGroupFileAddon01" />
-                            <label class="custom-file-label" for="profilepic">Choose file</label>
+                          <div className="custom-file">
+                            <input type="file" className="custom-file-input inputGroup-sizing-sm" id="inputGroup-sizing-sm" aria-describedby="inputGroupFileAddon01" />
+                            <label className="custom-file-label" htmlFor="profilepic">Choose file</label>
                           </div>
                         </div>
                       </div>
