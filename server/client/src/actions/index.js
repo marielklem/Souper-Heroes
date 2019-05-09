@@ -5,6 +5,7 @@ export const FETCH_CATEGORIES = 'fetch_categories';
 export const UPDATE_CART = 'updateCart'
 export const FETCH_USER = 'fetch_user'
 
+//get all products
 export const fetchProducts = () => {
   const request = axios.get('http://localhost:8000/products', {})
 
@@ -14,6 +15,7 @@ export const fetchProducts = () => {
   };
 }
 
+//get all categories
 export const fetchCategories = () => {
   const request = axios.get('http://localhost:8000/categories', {})
   return {
@@ -22,6 +24,7 @@ export const fetchCategories = () => {
   }
 }
 
+//update the cart (locally)
 export const updateCart = (items, category) => {
   const data = items
   return {
@@ -30,8 +33,9 @@ export const updateCart = (items, category) => {
   }
 }
 
+//get profile information on a user
 export const fetchUser = () => {
-  const request = axios.get('http://localhost:8000/categories', {})
+  const request = axios.get('http://localhost:8000/profile/5cd2f186c93c4937d8f970b0', {})
     return{
       type: FETCH_USER,
       payload: request

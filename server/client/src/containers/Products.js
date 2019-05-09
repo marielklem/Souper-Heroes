@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../actions';
+import '../static/products.css';
 
 class Products extends Component {
   state = {}

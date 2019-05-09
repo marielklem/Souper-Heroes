@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actionTypes from "../actions";
+// import * as actionTypes from "../actions";
 
 class Checkout extends Component {
   submitOrder(e) {
