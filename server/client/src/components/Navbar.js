@@ -35,8 +35,8 @@ export default class Example extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem style={{'padding': '10px'}}><Link to="/checkout"><i className="fas fa-shopping-cart" /></Link></NavItem>
-              <NavItem style={{'padding': '10px'}}><Link to="/orderStatus"><i className="fas fa-bell"/></Link></NavItem>
               <NavItem style={{'padding': '10px'}}><Link to="/profile"><i className="fas fa-user"/></Link></NavItem>
+              <NavItem style={{'padding': '10px'}}><Link to="/"><i className="fas fa-store"/></Link></NavItem>
             </Nav>
           </Collapse>
         </Navbar>

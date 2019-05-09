@@ -8,6 +8,7 @@ class Products extends Component {
 
   //add one item to cart on each click
   addToCart = (item) => {
+
     //check to make sure limit in category has not been reached
     if (this.state.length !== 0) {
       const limit = this.props.category.limit
@@ -20,16 +21,21 @@ class Products extends Component {
       }
       //if item already in state, add one
       if (item.name in this.state) {
-        const qty = parseInt(this.state[item.name]) + 1
-        this.setState({[item.name] : qty}, () => {
-          this.props.updateCart(this.state, this.props.category.name)
-        })
+        //check to make sure quantity hasn't been reached
+        if(this.state[item.name] < item.quantity) {
+          const qty = parseInt(this.state[item.name]) + 1
+          this.setState({[item.name] : qty}, () => {
+            this.props.updateCart(this.state, this.props.category.name)
+          })
+        } else {
+            throw alert (`Sorry we only have ${item.quantity} ${item.name} in stock. Please add a different item`)
+          }
       } else {
-        this.setState({[item.name]: 1}, () => {
-          this.props.updateCart(this.state, this.props.category.name)
-        })
-      }
-   }
+          this.setState({[item.name]: 1}, () => {
+            this.props.updateCart(this.state, this.props.category.name)
+          })
+        }
+    }
   }
 
   //subtract one item from cart on click
