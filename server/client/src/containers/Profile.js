@@ -22,25 +22,23 @@ class Profile extends Component {
                 <div className="user-info">
                   <img className="img-profile rounded-circle img-thumbnail img-responsive center-block"src={this.props.user.image} alt="user profile" />
                   <ul className="meta list list-unstyled">
-                    <li className="name">{this.props.user.name}
-                      {/* <label className="label label-info">Client</label> */}
-                    </li>
-                    <li className="email"><a href="#">{this.props.user.email}</a></li>
+                    <li className="name">{this.props.user.name}</li>
+                    <li className="email"><a>{this.props.user.email}</a></li>
                     <li className="activity">Last shopping date: Today at 2:18pm</li>
                   </ul>
                 </div>
 
                 <nav className="side-menu">
                   <ul className="nav">
-                    <li className="active"><a href="#"><span className="fa fa-user"></span> Profile</a></li>
-                    <li><a href="#"><span className="fa fa-credit-card"></span> Previous Orders</a></li>
-                    <li><a href="#"><span className="fa fa-envelope"></span> Messages</a></li>
+                    <li className="active"><a><span className="fa fa-user"></span> Profile</a></li>
+                    <li><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
+                    <li><a><span className="fa fa-envelope"></span> Messages</a></li>
                   </ul>
                 </nav>
               </div>
 
               <div className="content-panel">
-                {/* <h2 className="title">Profile<span className="pro-label label label-warning">ADMIN</span></h2> */}
+                <h2 className="title">Profile<span className="badge badge-warning badge-pill" style={{"marginLeft": "10px"}}>ADMIN</span></h2>
                   <form className="form-horizontal">
                     <fieldset className="fieldset container">
                       <h3 className="fieldset-title">Personal Info</h3>

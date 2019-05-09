@@ -1,6 +1,6 @@
-import { FETCH_PRODUCTS } from '../actions';
+import { FETCH_PRODUCTS } from '../actions/productActions'
 
-export default function(state = [], action) {
+export const productsReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_PRODUCTS:
       return action.payload.data;
@@ -8,3 +8,4 @@ export default function(state = [], action) {
       return state;
   }
 }
+export default productsReducer;

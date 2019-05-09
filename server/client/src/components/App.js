@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import Categories from "../containers/Categories"
 import Profile from "../containers/Profile"
 import Checkout from "../containers/Checkout"
+import Orders from "../containers/Orders"
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         <Route exact path ="/shop" render={() => <Categories />} />
         <Route exact path ="/profile" render={() => <Profile />} />
         <Route exact path ="/checkout" render={() => <Checkout />} />
+        <Route exact path ="/admin" render={() => <Orders />} />
       </Switch>
     </BrowserRouter>
   );

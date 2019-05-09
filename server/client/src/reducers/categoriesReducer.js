@@ -1,6 +1,6 @@
-import { FETCH_CATEGORIES } from '../actions';
+import { FETCH_CATEGORIES } from '../actions/productActions'
 
-export default function(state = [], action) {
+export const categoriesReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_CATEGORIES:
       return action.payload.data;
@@ -8,3 +8,4 @@ export default function(state = [], action) {
       return state;
   }
 }
+export default categoriesReducer;

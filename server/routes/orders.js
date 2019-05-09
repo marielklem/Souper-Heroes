@@ -34,7 +34,7 @@ router.post('/neworder', (req, res) => {
 router.put('/:order', (req, res) => {
   const newStatus = req.body.status
   Order.findByIdAndUpdate(
-    req.params.order, 
+    req.params.status, 
     {status : newStatus}, 
     (err, user) => {
     if(err) throw err;
