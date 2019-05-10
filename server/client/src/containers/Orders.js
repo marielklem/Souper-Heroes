@@ -30,6 +30,8 @@ class Orders extends Component {
   }
 
   renderOrders = () => {
+    console.log(this.props.orders)
+    if (this.props.orders.orders){
       return this.props.orders.orders.map (order => {
         return (
           <tr onClick={() => this.toggleDetails(order)} key={order._id}>
@@ -39,7 +41,7 @@ class Orders extends Component {
           </tr>
         )
       })
-
+    }
   }
 
   render() {

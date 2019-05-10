@@ -3,7 +3,9 @@ const User = require('../models/users')
 
 // Find the id of the user
 router.param('user', function (req, res, next, id) {
-  User.find({ _id : id }, (err, user) => {
+  User.find({
+    _id: id
+  }, (err, user) => {
     if (err) {
       res.status(404).send("Sorry, that user cannot be found")
     }
@@ -24,7 +26,7 @@ router.get('/:user', (req, res, next) => {
 
 // Post user profile information (new user)
 router.post('/newUser', (req, res) => {
-  let newUser = new User ({
+  let newUser = new User({
     name: req.body.name,
     email: req.body.email,
     image: req.body.image,
@@ -47,12 +49,13 @@ router.get('/:user/cart', (req, res) => {
 router.put('/:user/cart', (req, res) => {
   const newCart = req.body.cart
   User.findByIdAndUpdate(
-    req.params.user, 
-    {cart : newCart}, 
+    req.params.user, {
+      cart: newCart
+    },
     (err, user) => {
-    if(err) throw err;
-  })
-  res.send(req.user)
+      if (err) throw err;
+      res.send(user);
+    })
 })
 
 // Delete item from cart

@@ -1,4 +1,7 @@
-import { FETCH_ORDERS, UPDATE_ORDER } from '../actions/orderActions'
+import {
+  FETCH_ORDERS,
+  UPDATE_ORDER
+} from '../actions/orderActions'
 
 export const ordersReducer = (state = [], action) => {
   switch (action.type) {
@@ -8,13 +11,20 @@ export const ordersReducer = (state = [], action) => {
         orders: action.payload.data
       }
 
-    case UPDATE_ORDER:
-      return {
-        ...state,
-        orders: action.payload.data
-      }
-    default:
-        return state;  
+      case UPDATE_ORDER:
+        const stateCopy = {
+          ...state
+        }
+        stateCopy.orders.map((order, index, arr) => {
+          if (order._id == action.payload.data._id) {
+            arr[index] = action.payload.data
+          }
+          return arr;
+        });
+        return stateCopy;
+
+      default:
+        return state;
   }
 }
 export default ordersReducer;
