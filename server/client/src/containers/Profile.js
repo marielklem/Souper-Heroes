@@ -11,7 +11,6 @@ class Profile extends Component {
     if (this.props.user.length === 0) {
       return(<div>...loading</div>)
     }
-    console.log(this.props.user)
     return(
       <div className="container">
         <div className="view-account">

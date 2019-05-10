@@ -1,10 +1,8 @@
 import { FETCH_ORDERS, UPDATE_ORDER } from '../actions/orderActions'
 
-export const ordersReducer = (state = {}, action) => {
-  console.log('order reducer: made it')
+export const ordersReducer = (state = [], action) => {
   switch (action.type) {
     case FETCH_ORDERS:
-    console.log(action.payload.data)
       return {
         ...state,
         orders: action.payload.data

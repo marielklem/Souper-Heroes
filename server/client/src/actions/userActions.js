@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as actionTypes from './actionTypes';
 
 export const FETCH_USER = 'fetch_user';
 

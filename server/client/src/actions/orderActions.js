@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as actionTypes from './actionTypes'
 
 export const FETCH_ORDERS = 'fetch_orders';
 export const UPDATE_ORDER = 'update_order';

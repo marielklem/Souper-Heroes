@@ -9,7 +9,6 @@ class Checkout extends Component {
   }
 
   renderCart() {
-    console.log(this.props.cart)
     const items = Object.entries(this.props.cart) 
     return items.map (item => {
       return (
