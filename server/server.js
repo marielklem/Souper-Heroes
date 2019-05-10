@@ -28,11 +28,6 @@ const categoryRoutes = require('./routes/categories')
 const userRoutes = require('./routes/users')
 const orderRoutes = require('./routes/orders')
 
-app.use('/products', productRoutes)
-app.use('/profile', userRoutes)
-app.use('/categories', categoryRoutes)
-app.use('/orders', orderRoutes)
-
 //Deployment
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
@@ -46,6 +41,11 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+app.use('/products', productRoutes)
+app.use('/profile', userRoutes)
+app.use('/categories', categoryRoutes)
+app.use('/orders', orderRoutes)
 
 //Server
 const port = process.env.PORT || 5000
