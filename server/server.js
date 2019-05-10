@@ -1,6 +1,7 @@
 const express = require('express');
+const http = require('http');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser')
 const cors = require('cors');
 
 mongoose.connect('mongodb://localhost/souper-heros', {
@@ -32,6 +33,9 @@ app.use('/profile', userRoutes)
 app.use('/categories', categoryRoutes)
 app.use('/orders', orderRoutes)
 
-app.listen(8000, () => {
-  console.log('Node.js listening on port ' + 8000)
-})
+//Server
+const port = process.env.PORT || 5000
+const server = http.createServer(app);
+server.listen(port)
+
+console.log('Server listening on:', port);

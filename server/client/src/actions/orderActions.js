@@ -20,7 +20,7 @@ export const fetchOrders = () => {
 
 //update order status
 export const updateOrder = (id, status) => {
-  const request = axios.put(`http://localhost:8000/orders/${id}`, {
+  const request = axios.put(`http://localhost:5000/orders/${id}`, {
     headers: CORS_HEADERS,
     body: {
       "status": status
