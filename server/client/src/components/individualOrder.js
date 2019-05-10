@@ -7,6 +7,9 @@ import { Button, ModalHeader, ModalBody, ModalFooter, ListGroup, ListGroupItem }
 let moment = require("moment");
 
 class OrderDetails extends Component {
+  state = {
+    status: "pending"
+  }
 
   updateOrderStatus =() => {
     const status = "complete"
@@ -31,7 +34,7 @@ class OrderDetails extends Component {
   render() {
     return(
       <React.Fragment>  
-          <ModalHeader>Order Number: {this.props.order._id}</ModalHeader>
+          <ModalHeader>{this.props.order.name}'s Order</ModalHeader>
           <ModalBody>
             <p style={{"textAlign": "right", "fontSize" : "12px", "color": "#A9A9A9"}}>Order placed {moment(this.props.order.createdAt).format("MM/DD/YYYY")}</p>
             <ListGroup>
@@ -40,7 +43,7 @@ class OrderDetails extends Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.updateOrderStatus}>Do Something</Button>{' '}
+            <Button color="primary" onClick={this.updateOrderStatus}>Complete Order</Button>{' '}
             <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           </ModalFooter>
       </React.Fragment>

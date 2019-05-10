@@ -16,7 +16,7 @@ export const ordersReducer = (state = [], action) => {
           ...state
         }
         stateCopy.orders.map((order, index, arr) => {
-          if (order._id == action.payload.data._id) {
+          if (order._id === action.payload.data._id) {
             arr[index] = action.payload.data
           }
           return arr;

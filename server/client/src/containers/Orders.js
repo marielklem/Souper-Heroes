@@ -30,7 +30,6 @@ class Orders extends Component {
   }
 
   renderOrders = () => {
-    console.log(this.props.orders)
     if (this.props.orders.orders){
       return this.props.orders.orders.map (order => {
         return (
