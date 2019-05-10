@@ -11,7 +11,7 @@ const CORS_HEADERS = {
 
 //get all pending orders
 export const fetchOrders = () => {
-  const request = axios.get('http://localhost:8000/orders/pending', {})
+  const request = axios.get('/orders/pending', {})
     return{
       type: FETCH_ORDERS,
       payload: request
@@ -20,7 +20,7 @@ export const fetchOrders = () => {
 
 //update order status
 export const updateOrder = (id, status) => {
-  const request = axios.put(`http://localhost:5000/orders/${id}`, {
+  const request = axios.put(`/orders/${id}`, {
     headers: CORS_HEADERS,
     body: {
       "status": status

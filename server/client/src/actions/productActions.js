@@ -6,7 +6,7 @@ export const FETCH_CATEGORIES = 'fetch_categories';
 
 //get all products
 export const fetchProducts = () => {
-  const request = axios.get('http://localhost:5000/products', {})
+  const request = axios.get('/products', {})
 
   return {
     type: FETCH_PRODUCTS,
@@ -16,7 +16,7 @@ export const fetchProducts = () => {
 
 //get all categories
 export const fetchCategories = () => {
-  const request = axios.get('http://localhost:5000/categories', {})
+  const request = axios.get('/categories', {})
   return {
     type: FETCH_CATEGORIES,
     payload: request
