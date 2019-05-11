@@ -4,8 +4,8 @@
   "description": "App used to assist food pantries with shopping and distribution of food to clients with transportation barriers",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Mariel Klem",
   "license": "ISC",
@@ -15,17 +15,10 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "http": "0.0.0",
-    "mongoose": "^5.5.6",
-    "react-redux": "^7.0.3",
-    "redux": "^4.0.1",
-    "redux-promise": "^0.6.0"
+    "mongoose": "^5.5.6"
   },
   "engines": {
-    "node": "8.1.1",
-    "npm": "5.0.3"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "node": "10.15.1",
+    "npm": "6.9.0"
   }
 }
