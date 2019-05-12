@@ -1,3 +1,26 @@
+.card {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.card-title {
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
+  height: 40px;
+}
+
+
+@media (min-width: 576px) {
+  html { font-size: 1.25rem; }
+}
+@media (min-width: 992px) {
+  html { font-size: 1.15rem; }
+}
+
+
 /* Counter */
 .qty .count {
   color: #000;
