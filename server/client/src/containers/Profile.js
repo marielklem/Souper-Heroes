@@ -4,8 +4,16 @@ import * as actionTypes from "../actions";
 import '../static/profile.css';
 
 class Profile extends Component {
+  state = {
+    user: "active",
+    orders: "inactive",
+    messages: "inactive"
+  }
   componentDidMount() {
     this.props.fetchUser()
+  }
+  toggleActive = (e) => {
+    console.log(e)
   }
   render() {
     if (this.props.user.length === 0) {
@@ -22,16 +30,16 @@ class Profile extends Component {
                   <img className="img-profile rounded-circle img-thumbnail img-responsive center-block"src={this.props.user.image} alt="user profile" />
                   <ul className="meta list list-unstyled">
                     <li className="name">{this.props.user.name}</li>
-                    <li className="email"><a>{this.props.user.email}</a></li>
-                    <li className="activity">Last shopping date: Today at 2:18pm</li>
+                    <li className="email" style={{"font-size": ".75rem"}}><a>{this.props.user.email}</a></li>
+                    {/* <li className="activity">Last shopping date: Today at 2:18pm</li> */}
                   </ul>
                 </div>
 
                 <nav className="side-menu">
                   <ul className="nav">
-                    <li className="active"><a><span className="fa fa-user"></span> Profile</a></li>
-                    <li><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
-                    <li><a><span className="fa fa-envelope"></span> Messages</a></li>
+                    <li className={this.state.user} key='1' onClick={this.toggleActive(1)}><a><span className="fa fa-user"></span> Profile</a></li>
+                    <li className={this.state.orders} onClick={this.toggleActive("orders")}><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
+                    <li className={this.state.messages} onClick={this.toggleActive("messages")}><a><span className="fa fa-envelope"></span> Messages</a></li>
                   </ul>
                 </nav>
               </div>
@@ -71,26 +79,65 @@ class Profile extends Component {
                           <input type="text" className="form-control form-control-sm" value={this.props.user.location} />
                         </div>
                       </div>
+                     
                     </fieldset>
 
                     <fieldset className="fieldset container">
-                      <h3 className="fieldset-title">Demographics Info</h3>
+                      <h3 className="fieldset-title">Intake Form</h3>
+                      <div className="form-group row">
+                      <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Dietary Restrictions</label>
+                        <div className="col-md-10 col-sm-9 col-xs-12">
+                          <input type="text" className="form-control form-control-sm" value="gluten-free, no sugar, no pork" />
+                        </div>
+                      </div>
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Race</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <input type="text" className="form-control form-control-sm" value={this.props.user.demographics.race}/>
+                          <select id="inputRace" class="form-control form-control-sm">
+                            <option selected>{this.props.user.demographics.race}</option>
+                            <option>Asian</option>
+                            <option>African American</option>
+                            <option>Hispanic/Latino</option>
+                            <option>White</option>
+                            <option>biracial</option>
+                          </select>
                         </div>
                       </div>
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Gender</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <input type="text" className="form-control form-control-sm" value={this.props.user.demographics.gender}/>
+                        <select id="inputRace" class="form-control form-control-sm">
+                            <option selected>{this.props.user.demographics.gender}</option>
+                            <option>male</option>
+                            <option>female</option>
+                            <option>Non-binary/ third gender</option>
+                            <option>Prefer not to say</option>
+                          </select>
                         </div>
                       </div>
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Family Size</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
                           <input type="text" className="form-control form-control-sm" value={this.props.user.demographics.householdSize}/>
+                        </div>
+                      </div>
+                      <div className="form-group row">
+                        <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">SNAP or WIC Benefits?</label>
+                        <div className="col-md-10 col-sm-9 col-xs-12">
+                          <select id="inputRace" class="form-control form-control-sm">
+                            <option selected>no</option>
+                            <option>yes</option>
+                            <option>unsure</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="form-group row">
+                        <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Food Need</label>
+                        <div className="col-md-10 col-sm-9 col-xs-12">
+                          <select id="inputRace" class="form-control form-control-sm">
+                            <option selected>on-going</option>
+                            <option>one time</option>
+                          </select>
                         </div>
                       </div>
                     </fieldset>

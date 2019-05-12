@@ -12,7 +12,7 @@ import {
 import logo from "../static/logo.png"
 import header from "../static/market.jpg"
 
-export default class Example extends React.Component {
+export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
 

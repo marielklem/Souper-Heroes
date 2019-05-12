@@ -13,7 +13,6 @@ export const ordersReducer = (state = [], action) => {
       }
       
     case SUBMIT_ORDER:
-    console.log('made it to reducer')
       return {
         ...state,
         orders: action.payload.data

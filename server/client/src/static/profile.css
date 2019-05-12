@@ -1,5 +1,5 @@
 body{
-background:#f9f9fb;    
+    background:#f9f9fb;
 }
 .view-account{
   background:#FFFFFF; 
@@ -33,7 +33,7 @@ margin-bottom: 15px
 }
 
 .view-account .side-bar .user-info .meta li {
-margin-bottom: 10px
+    margin-bottom: 10px
 }
 
 .view-account .side-bar .user-info .meta li span {
@@ -127,6 +127,7 @@ font-size: 18px
 
 .view-account .content-panel .fieldset-title {
 padding-bottom: 15px;
+padding-top: 30px;
 border-bottom: 1px solid #eaeaf1;
 margin-bottom: 30px;
 color: #616670;
