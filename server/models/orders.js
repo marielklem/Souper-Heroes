@@ -4,7 +4,7 @@ const User = require('./users').schema
 
 const OrderSchema = new Schema ({
   name: String,
-  nameId: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  nameId: String,
   status: String,
   createdAt: {type: Date, default: Date.now},
   updatedAt: {type: Date, default: Date.now},

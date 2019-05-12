@@ -23,7 +23,7 @@ router.get('/pending', (req, res, next) => {
 router.post('/neworder', (req, res) => {
   let newOrder = new Order({
     name: req.body.name,
-    nameId: req.body.user,
+    nameId: req.body.nameId,
     status: 'pending',
     order: req.body.order
   })

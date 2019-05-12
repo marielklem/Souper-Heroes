@@ -24,7 +24,9 @@ export const submitOrder = (order) => {
   console.log(order)
   const request = axios.post('/orders/neworder', {
     headers: CORS_HEADERS,
-    body: order
+    name: order.name,
+    nameId: order.nameId,
+    order: order.order
   })
   return {
     type: SUBMIT_ORDER,
