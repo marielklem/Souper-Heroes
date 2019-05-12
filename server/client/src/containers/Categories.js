@@ -100,7 +100,7 @@ class Categories extends Component {
               <h1 className="category-title col-6">
                     {category.name}
                 </h1>
-                <span className="col-6 limit" style={{"color": (this.state[category] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "red") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
+                <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
             </CardHeader>
             <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>
 
