@@ -10,6 +10,7 @@ export {
 //orders
 export {
   fetchOrders,
+  submitOrder,
   updateOrder
 } from './orderActions'
 

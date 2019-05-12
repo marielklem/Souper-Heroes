@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const FETCH_ORDERS = 'fetch_orders';
+export const SUBMIT_ORDER = 'submit_order'
 export const UPDATE_ORDER = 'update_order';
 
 const CORS_HEADERS = {
@@ -16,6 +17,19 @@ export const fetchOrders = () => {
       type: FETCH_ORDERS,
       payload: request
     }
+}
+
+//submit an order
+export const submitOrder = (order) => {
+  console.log(order)
+  const request = axios.post('/orders/neworder', {
+    headers: CORS_HEADERS,
+    body: order
+  })
+  return {
+    type: SUBMIT_ORDER,
+    payload: request
+  }
 }
 
 //update order status

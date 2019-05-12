@@ -28,7 +28,7 @@ router.post('/neworder', (req, res) => {
     order: req.body.order
   })
   newOrder.save()
-  res.send(`Order successfully recieved`)
+  res.send(newOrder)
 
 })
 

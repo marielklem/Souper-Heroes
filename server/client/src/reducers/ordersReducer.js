@@ -1,5 +1,6 @@
 import {
   FETCH_ORDERS,
+  SUBMIT_ORDER,
   UPDATE_ORDER
 } from '../actions/orderActions'
 
@@ -10,21 +11,28 @@ export const ordersReducer = (state = [], action) => {
         ...state,
         orders: action.payload.data
       }
+      
+    case SUBMIT_ORDER:
+    console.log('made it to reducer')
+      return {
+        ...state,
+        orders: action.payload.data
+      }
 
-      case UPDATE_ORDER:
-        const stateCopy = {
-          ...state
+    case UPDATE_ORDER:
+      const stateCopy = {
+        ...state
+      }
+      stateCopy.orders.map((order, index, arr) => {
+        if (order._id === action.payload.data._id) {
+          arr[index] = action.payload.data
         }
-        stateCopy.orders.map((order, index, arr) => {
-          if (order._id === action.payload.data._id) {
-            arr[index] = action.payload.data
-          }
-          return arr;
-        });
-        return stateCopy;
+        return arr;
+      });
+      return stateCopy;
 
-      default:
-        return state;
+    default:
+      return state;
   }
 }
 export default ordersReducer;

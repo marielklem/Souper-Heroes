@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actionTypes from "../actions";
 import Products from "./Products"
 
-import { Collapse, CardHeader, CardBody, Card } from 'reactstrap';
+import { Collapse, CardBody, Card } from 'reactstrap';
 
 class Categories extends Component {
   state = {}
@@ -92,18 +92,15 @@ class Categories extends Component {
     return this.props.categories.map (category => {
       return (
         <div className="container" key={category._id}>
-          <Card>
-            <CardHeader onClick={() => this.toggleCategory(category.name)}>
-              <h1 className="category-title col-6">
-                    {category.name}
-                </h1>
-                <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
-            </CardHeader>
+          <Card clasName="row" >
+            <div className="container" onClick={() => this.toggleCategory(category.name)}>
+              <div className="category-title col-6" >{category.name}</div>
+              <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
+            </div>
             <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>
-
+            <hr />
               {this.renderProducts(category)} 
-
-              </Collapse>
+            </Collapse>
           </Card>
       </div>
       )

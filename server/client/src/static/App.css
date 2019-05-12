@@ -9,14 +9,18 @@ body {
 .limit {
   float: right;
   font-family: 'Bangers', cursive;
-  font-size: 30px
+  font-size: 25px
 }
 
 .category-title {
   font-family: 'Bangers';
   color: black;
   text-align: left;
-  font-size: 30px;
+  font-size: 25px;
+  float: left
+}
+.card-head {
+  height: 40px;
 }
 
 .img-logo {
