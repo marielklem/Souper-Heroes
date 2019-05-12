@@ -13,8 +13,33 @@ class Categories extends Component {
     this.props.fetchProducts();
   }
 
+  setLocalState() {
+    console.log('made it')
+    this.props.categories.map (category => {
+      this.setState(
+        {[category]: {
+          total: 0,
+          color: "green",
+          collapse: true
+        }}
+      )
+    })
+  }
+
   //toggle each category container open and closed on click
-  
+  toggleCategory = (name) => {
+    if (name in this.state) {
+      this.setState({[name] : {
+        ...this.state[name],
+        collapse: !this.state[name].collapse
+      }})
+    } else {
+      this.setState({[name] : {
+      collapse: false
+    }})
+    }
+  }
+
 
   //update total to auto collapse each card and update total vs limit in each category
   updateTotal = (category, total) => {
@@ -27,9 +52,7 @@ class Categories extends Component {
       const category1 = this.props.categories.find( (limit) => {
         return limit.name === category
       })
-      console.log(this.state)
       if (this.state[category].total >= category1.limit) {
-        
         this.setState({
           [category1.name]: {
             color: "red",
@@ -69,17 +92,15 @@ class Categories extends Component {
       )
     }
     return this.props.categories.map (category => {
-      if (this.state[category.name]) {
-        console.log(this.state[category.name].color)
-      }
+      console.log(this.state[category.name])
       return (
         <div className="container">
           <Card>
-            <CardHeader key={category._id} onClick={this.toggleCategory}>
+            <CardHeader key={category._id} onClick={() => this.toggleCategory(category.name)}>
               <h1 className="category-title col-6">
                     {category.name}
                 </h1>
-                <span className="col-6 limit" style={{"color": (this.state[category.name] ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
+                <span className="col-6 limit" style={{"color": (this.state[category] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "red") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
             </CardHeader>
             <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>
 

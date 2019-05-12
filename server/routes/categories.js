@@ -26,7 +26,10 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res) => {
   let newCategory = new Category({
     name: req.body.name,
-    limit: req.body.limit
+    limit: req.body.limit,
+    color: "green",
+    collapse: true,
+    total: 0
   })
   newCategory.save()
 
