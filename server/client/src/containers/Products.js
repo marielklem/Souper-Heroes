@@ -5,7 +5,8 @@ import '../static/products.css';
 
 class Products extends Component {
   state = {
-    sum: 0
+    sum: 0,
+    order: {}
   }
 
 
@@ -18,23 +19,23 @@ class Products extends Component {
         throw alert (`Limit reached, please remove some ${item.category} items from your cart to add this item`)
       }
       //if item already in state, add one
-      if (item.name in this.state) {
+      if (item.name in this.state.order) {
         //check to make sure quantity hasn't been reached
-        if(this.state[item.name] < item.quantity) {
-          const qty = parseInt(this.state[item.name]) + 1
+        if(this.state.order[item.name] < item.quantity) {
+          const qty = parseInt(this.state.order[item.name]) + 1
           let sum = this.state.sum + 1
-          this.setState({[item.name] : qty, sum}, () => {
+          this.setState({order : {...this.state.order, [item.name] : qty}, sum}, () => {
             updateTotal(item.category, this.state.sum)
-            this.props.updateCart(this.state, this.props.category.name)
+            this.props.updateCart(this.state.order, this.props.category.name)
           })
         } else {
             throw alert (`Sorry we only have ${item.quantity} ${item.name} in stock. Please add a different item`)
           }
       } else {
           let sum = this.state.sum + 1
-          this.setState({[item.name]: 1, sum}, () => {
+          this.setState({order : {...this.state.order, [item.name] : 1}, sum}, () => {
             updateTotal(item.category, this.state.sum)
-            this.props.updateCart(this.state, this.props.category.name)
+            this.props.updateCart(this.state.order, this.props.category.name)
           })
         }
     }
@@ -43,11 +44,11 @@ class Products extends Component {
   //subtract one item from cart on click
   subtractFromCart = (item, updateTotal) => {
     if (this.state[item.name] > 0) {
-      const qty = parseInt(this.state[item.name]) - 1
+      const qty = parseInt(this.state.order[item.name]) - 1
       let sum = this.state.sum - 1
-      this.setState({[item.name] : qty, sum}, () => {
+      this.setState({order : {...this.state.order, [item.name] : qty}, sum}, () => {
         updateTotal(item.category, this.state.sum)
-        this.props.updateCart(this.state, this.props.category.name)
+        this.props.updateCart(this.state.order, this.props.category.name)
       })
     } else {
       this.setState({[item.name]: 0}, () => {
@@ -68,7 +69,7 @@ class Products extends Component {
           <p className="card-title">{item.name}</p>
           <div className="qty mt-5">
             <span className="minus bg-secondary" onClick={() => this.subtractFromCart(item, updateTotal)}>-</span>
-            <input type="number" className="count" name={item.name} value={this.state[item.name] || 0} readOnly />
+            <input type="number" className="count" name={item.name} value={this.state.order[item.name] || 0} readOnly />
             <span className="plus bg-secondary" onClick={() => this.addToCart(item, updateTotal)}>+</span>
           </div>
         </div>
