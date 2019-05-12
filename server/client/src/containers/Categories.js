@@ -8,13 +8,12 @@ import { Collapse, CardHeader, CardBody, Card } from 'reactstrap';
 class Categories extends Component {
   state = {}
   //on page load, fetch all products
-  componentDidMount() {
+  componentDidMount = () => {
     this.props.fetchCategories();
     this.props.fetchProducts();
   }
 
-  setLocalState() {
-    console.log('made it')
+  setLocalState = () => {
     this.props.categories.map (category => {
       this.setState(
         {[category]: {
@@ -35,11 +34,12 @@ class Categories extends Component {
       }})
     } else {
       this.setState({[name] : {
+      color: "green",
+      total: 0,
       collapse: false
     }})
     }
   }
-
 
   //update total to auto collapse each card and update total vs limit in each category
   updateTotal = (category, total) => {
@@ -80,8 +80,6 @@ class Categories extends Component {
           </ul>
         </div>
       </CardBody>
-
-      
     )
   }
 
@@ -92,11 +90,10 @@ class Categories extends Component {
       )
     }
     return this.props.categories.map (category => {
-      console.log(this.state[category.name])
       return (
-        <div className="container">
+        <div className="container" key={category._id}>
           <Card>
-            <CardHeader key={category._id} onClick={() => this.toggleCategory(category.name)}>
+            <CardHeader onClick={() => this.toggleCategory(category.name)}>
               <h1 className="category-title col-6">
                     {category.name}
                 </h1>
@@ -109,23 +106,6 @@ class Categories extends Component {
               </Collapse>
           </Card>
       </div>
-        // <div key={category._id} className="container">
-        //   <div id="accordion" style={{'padding': '10px'}} className="row" >
-        //     <div className="card" isOpen={this.state.collapse}>
-        //       <div className="card-header" id="categories">
-                // <h1 className="btn btn-link category-title col-6" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                //   {category.name}
-                // </h1>
-                // <span className="col-6 limit" style={{'float': 'right', "color": this.state.color}}>{this.state[category.name] || 0}/{category.limit}</span>
-        //       </div>
-        //       <div id="collapseOne" className="collapse show" aria-labelledby="categories" data-parent="#accordion">
-        //       <div className="panel-body">
-        //         {this.renderProducts(category)}  
-        //       </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
       )
     })
   }
