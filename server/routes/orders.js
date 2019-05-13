@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Order = require('../models/orders')
+const Users = require('../models/users')
 
 //GET all orders
 router.get('/', (req, res, next) => {
@@ -27,6 +28,15 @@ router.post('/neworder', (req, res) => {
     status: 'pending',
     order: req.body.order
   })
+
+  Users
+    .findOne({_id : req.body.nameId})
+      .populate(newOrder, {path: 'order'},
+      (err, order) => {
+        if (err) throw err;
+        res.send(order)
+      })
+
   newOrder.save()
   res.send(newOrder)
 

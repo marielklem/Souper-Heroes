@@ -1,9 +1,36 @@
 body {
   font-family: 'Raleway', sans-serif;
+  /* margin-top: 50px; */
+  /* background-color: RGBA(13, 70, 83); */
+}
+
+/* .navvy {
+  background-image: url("../static/grapes.jpg");
+} */
+
+.grapes {
+  background-image: url("../static/grapes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 800px
+}
+
+.big-icons {
+  font-size: 90px;
+  color: RGBA(13, 70, 83);
 }
 
 .logo {
   font-family: 'Bangers', cursive;
+}
+
+.end-network {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .limit {

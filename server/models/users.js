@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Order = require('./orders').schema
 
 const UserSchema = new Schema ({
   name: String,

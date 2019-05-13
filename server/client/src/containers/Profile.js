@@ -20,9 +20,9 @@ class Profile extends Component {
       return(<div>...loading</div>)
     }
     return(
-      <div className="container">
+      <div className="container" style={{'padding': '70px'}}>
         <div className="view-account">
-          <section className="module">
+          <section className="module" >
             <div className="module-inner">
 
               <div className="side-bar">
@@ -38,14 +38,14 @@ class Profile extends Component {
                 <nav className="side-menu">
                   <ul className="nav">
                     <li className={this.state.user} key='1' onClick={this.toggleActive(1)}><a><span className="fa fa-user"></span> Profile</a></li>
-                    <li className={this.state.orders} onClick={this.toggleActive("orders")}><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
-                    <li className={this.state.messages} onClick={this.toggleActive("messages")}><a><span className="fa fa-envelope"></span> Messages</a></li>
+                    {/* <li className={this.state.orders} onClick={this.toggleActive("orders")}><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
+                    <li className={this.state.messages} onClick={this.toggleActive("messages")}><a><span className="fa fa-envelope"></span> Messages</a></li> */}
                   </ul>
                 </nav>
               </div>
 
               <div className="content-panel">
-                <h2 className="title">Profile<span className="badge badge-warning badge-pill" style={{"marginLeft": "10px"}}>ADMIN</span></h2>
+                <h2 className="title">Profile<span className="badge badge-warning badge-pill" style={{"marginLeft": "10px"}}>CLIENT</span></h2>
                   <form className="form-horizontal">
                     <fieldset className="fieldset container">
                       <h3 className="fieldset-title">Personal Info</h3>
