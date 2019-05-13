@@ -29,9 +29,9 @@ export default class NavBar extends React.Component {
       <div>
         <Navbar light expand="md" className="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar navvy">
           <div className="container">
-            <NavbarBrand><Link to="/" className="navbar-brand">
+            <NavbarBrand href="/">
               <strong>Souper Heroes</strong>
-            </Link></NavbarBrand>
+            </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="navbar-nav mr-auto" navbar>

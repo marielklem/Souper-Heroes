@@ -30,7 +30,7 @@ class Profile extends Component {
                   <img className="img-profile rounded-circle img-thumbnail img-responsive center-block"src={this.props.user.image} alt="user profile" />
                   <ul className="meta list list-unstyled">
                     <li className="name">{this.props.user.name}</li>
-                    <li className="email" style={{"font-size": ".75rem"}}><a>{this.props.user.email}</a></li>
+                    <li className="email" style={{"fontSize": ".75rem"}}><a href="mailto:">{this.props.user.email}</a></li>
                     {/* <li className="activity">Last shopping date: Today at 2:18pm</li> */}
                   </ul>
                 </div>
@@ -64,7 +64,7 @@ class Profile extends Component {
                       <div className="form-group row">
                       <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Full Name</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <input type="text" className="form-control form-control-sm" value={this.props.user.name}/>
+                          <input type="text" className="form-control form-control-sm" value={this.props.user.name} readOnly/>
                         </div>
                       </div>
                       <div className="form-group row">
@@ -93,7 +93,7 @@ class Profile extends Component {
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Race</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <select id="inputRace" class="form-control form-control-sm">
+                          <select id="inputRace" className="form-control form-control-sm">
                             <option selected>{this.props.user.demographics.race}</option>
                             <option>Asian</option>
                             <option>African American</option>
@@ -106,7 +106,7 @@ class Profile extends Component {
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Gender</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                        <select id="inputRace" class="form-control form-control-sm">
+                        <select id="inputRace" className="form-control form-control-sm">
                             <option selected>{this.props.user.demographics.gender}</option>
                             <option>male</option>
                             <option>female</option>
@@ -124,7 +124,7 @@ class Profile extends Component {
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">SNAP or WIC Benefits?</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <select id="inputRace" class="form-control form-control-sm">
+                          <select id="inputRace" className="form-control form-control-sm">
                             <option selected>no</option>
                             <option>yes</option>
                             <option>unsure</option>
@@ -134,7 +134,7 @@ class Profile extends Component {
                       <div className="form-group row">
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Food Need</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
-                          <select id="inputRace" class="form-control form-control-sm">
+                          <select id="inputRace" className="form-control form-control-sm">
                             <option selected>on-going</option>
                             <option>one time</option>
                           </select>

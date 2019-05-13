@@ -43,7 +43,7 @@ class Products extends Component {
 
   //subtract one item from cart on click
   subtractFromCart = (item, updateTotal) => {
-    if (this.state[item.name] > 0) {
+    if (this.state.order[item.name] > 0) {
       const qty = parseInt(this.state.order[item.name]) - 1
       let sum = this.state.sum - 1
       this.setState({order : {...this.state.order, [item.name] : qty}, sum}, () => {
