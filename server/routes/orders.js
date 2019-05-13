@@ -29,13 +29,13 @@ router.post('/neworder', (req, res) => {
     order: req.body.order
   })
 
-  Users
-    .findOne({_id : req.body.nameId})
-      .populate(newOrder, {path: 'order'},
-      (err, order) => {
-        if (err) throw err;
-        res.send(order)
-      })
+  // Users
+  //   .findOne({_id : req.body.nameId})
+  //     .populate(newOrder, {path: 'order'},
+  //     (err, order) => {
+  //       if (err) throw err;
+  //       res.send(order)
+  //     })
 
   newOrder.save()
   res.send(newOrder)
