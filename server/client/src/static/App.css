@@ -1,13 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
-  padding-top: 75px;
-  /* background-color: RGBA(13, 70, 83); */
+  padding-top: 70px;
 }
-
-/* .navvy {
-  padding-bottom: 20px;
-  background-image: url("../static/grapes.jpg");
-} */
 
 .navvy {
   /* background-image: url("../static/grapes.jpg");
@@ -30,10 +24,6 @@ body {
 .big-icons {
   font-size: 90px;
   color: RGBA(13, 70, 83);
-}
-
-.logo {
-  font-family: 'Bangers', cursive;
 }
 
 .end-network {

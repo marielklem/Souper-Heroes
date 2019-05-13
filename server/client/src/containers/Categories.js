@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from "../actions";
 import Products from "./Products"
-import grapes from "../static/grapes.jpg"
-
 
 import { Collapse, CardBody, Card } from 'reactstrap';
 
@@ -85,45 +83,29 @@ class Categories extends Component {
     )
   }
 
-  renderCategories = () => {
-        return this.props.categories.map (category => {
-          return (
-            <div className="container" key={category._id}>
-              <Card clasName="row" >
-                <div className="container" onClick={() => this.toggleCategory(category.name)}>
-                  <div className="category-title col-6" >{category.name}</div>
-                  <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
-                </div>
-                <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>
-                <hr />
-                  {this.renderProducts(category)} 
-                </Collapse>
-              </Card>
-            </div>
-          )})
-        }
-
   render() {
     if (this.props.inventory.length === 0) {
       return (
         <div>...loading</div>
       )
     }
-    return (
-      <React.Fragment>
-        <div className="view" style={{"backgroundImage": `url(${grapes})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover", "backgroundPosition": "center center", "minHeight": "30%"}}></div>
-          <div className="mask rgba-gradient d-flex justify-content-center align-items-center"></div>
-            {/* <div className="container" style={{"padding": "70px"}}>
-              <div className="row"> */}
-                {this.renderCategories()} 
-              {/* </div> */}
-            {/* </div> */}
-          {/* </div>
-        </div> */}
-      </React.Fragment>
-    )
-
-    }
+    return this.props.categories.map (category => {
+      return (
+        <div className="container" key={category._id}>
+          <Card clasName="row" >
+            <div className="container" onClick={() => this.toggleCategory(category.name)}>
+              <div className="category-title col-6" >{category.name}</div>
+              <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
+            </div>
+            <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>
+            <hr />
+              {this.renderProducts(category)} 
+            </Collapse>
+          </Card>
+      </div>
+      )
+    })
+  }
 }
 
 const mapStateToProps = state => {
