@@ -4,9 +4,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-mongoose.connect('mongodb://localhost/souper-heros', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true
 })
+
 
 const app = express()
 
