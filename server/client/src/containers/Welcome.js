@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from "../actions";
 import grapes from "../static/grapes.jpg"
-import feed from "../static/tin-cans.png"
+import feed from "../static/network.png"
 import {Link} from 'react-router-dom';
 
 class Welcome extends Component {
