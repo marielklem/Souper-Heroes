@@ -101,7 +101,7 @@ class Categories extends Component {
         <div className="container" key={category._id}>
           <Card >
             <div className="container" onClick={() => this.toggleCategory(category.name)}>
-              <div className="category-title col-6" >{category.name}</div>
+              <div className="category-title col-6" ><strong>{category.name.toUpperCase()}</strong></div>
               <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>
             </div>
             <Collapse isOpen={this.state[category.name] ? this.state[category.name].collapse : true}>

@@ -4,10 +4,6 @@ body {
 }
 
 .navvy {
-  /* background-image: url("../static/grapes.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; */
   background-color: RGBA(13, 70, 83, 0.78);
   min-height: 70px;
 }
@@ -40,8 +36,8 @@ body {
 }
 
 .category-title {
-  font-family: 'Bangers';
-  color: black;
+  font-family: 'Oswald', sans-serif;
+  color: RGBA(13, 70, 83);
   text-align: left;
   font-size: 25px;
   float: left

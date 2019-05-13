@@ -20,10 +20,10 @@ class Profile extends Component {
       return(<div>...loading</div>)
     }
     return(
-      <div className="container" style={{'padding': '20px'}}>
+      <div className="container" style={{'padding': '20px' }}>
         <div className="view-account">
           <section className="module" >
-            <div className="module-inner">
+            <div className="module-inner" style={{'padding': '20px' }}>
 
               <div className="side-bar">
                 <div className="user-info">
@@ -144,7 +144,7 @@ class Profile extends Component {
                     <hr />
                     <div className="form-group container">
                       <div className="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0 text-center">
-                        <input className="btn btn-primary center-block" style={{"width": "50%"}}type="submit" value="Update Profile"/>
+                        <input className="btn btn-info center-block" style={{"width": "50%"}}type="submit" value="Update Profile"/>
                       </div>
                     </div>
                   </form>
