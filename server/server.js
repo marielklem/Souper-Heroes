@@ -28,6 +28,17 @@ const categoryRoutes = require('./routes/categories')
 const userRoutes = require('./routes/users')
 const orderRoutes = require('./routes/orders')
 
+
+
+app.use('/products', productRoutes)
+app.use('/profile', userRoutes)
+app.use('/categories', categoryRoutes)
+app.use('/orders', orderRoutes)
+
+//Server
+const port = process.env.PORT || 5000
+const server = http.createServer(app);
+
 //Deployment
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
@@ -42,14 +53,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.use('/products', productRoutes)
-app.use('/profile', userRoutes)
-app.use('/categories', categoryRoutes)
-app.use('/orders', orderRoutes)
-
-//Server
-const port = process.env.PORT || 5000
-const server = http.createServer(app);
 server.listen(port)
-
 console.log('Server listening on:', port);

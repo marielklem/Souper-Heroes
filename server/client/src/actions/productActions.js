@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_PRODUCTS = 'fetch_products';
 export const UPDATE_CART = 'update_cart';
 export const FETCH_CATEGORIES = 'fetch_categories';
+export const DELETE_CART = 'delete_cart'
 
 //get all products
 export const fetchProducts = () => {
@@ -29,5 +30,13 @@ export const updateCart = (items, category) => {
   return {
     type: UPDATE_CART,
     payload: data
+  }
+}
+
+export const deleteCart = () => {
+  const refresh = {}
+  return {
+    type: DELETE_CART,
+    payload: refresh
   }
 }

@@ -4,7 +4,8 @@
 export {
   fetchProducts,
   fetchCategories,
-  updateCart
+  updateCart,
+  deleteCart
 } from './productActions'
 
 //orders
