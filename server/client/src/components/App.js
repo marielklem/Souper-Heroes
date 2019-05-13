@@ -17,10 +17,10 @@ function App() {
       <Switch>
         <Route exact path="/" render={() => <Welcome />} />
         <div className="grapes">
-        <Route exact path ="/shop" render={() => <Categories />} />
-        <Route exact path ="/profile" render={() => <Profile />} />
-        <Route exact path ="/checkout" render={() => <Checkout />} />
-        <Route exact path ="/admin" render={() => <Orders />} />
+          <Route exact path ="/shop" render={() => <Categories />} />
+          <Route exact path ="/profile" render={() => <Profile />} />
+          <Route exact path ="/checkout" render={() => <Checkout />} />
+          <Route exact path ="/admin" render={() => <Orders />} />
         </div>
       </Switch>
     </BrowserRouter>

@@ -17,31 +17,6 @@ class Welcome extends Component {
     return(
       <React.Fragment>
       <header>
-
-        {/* <nav className="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-          <div className="container">
-            <a className="navbar-brand" href="#">
-              <strong>Souper Heroes</strong>
-            </a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent-7">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <Link to="/checkout" className="nav-link">View Cart</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/shop" className="nav-link">Shop</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/profile" className="nav-link">Profile</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> */}
-
         <div className="view" style={{"background-image": `url(${grapes})`, "background-repeat": "no-repeat", "backgroundSize": "cover", "backgroundPosition": "center center", "minHeight": "500px"}}>
           <div className="mask rgba-gradient d-flex justify-content-center align-items-center">
             <div className="container">
@@ -55,29 +30,22 @@ class Welcome extends Component {
                 <div className="col-md-6 col-xl-5 mt-xl-5 end-network">
                   <img src={feed} alt="" className="img-responsive"/>
                 </div>
-                
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </header>
-
       <div className="main">
         <div className="container">
           <div className="row py-5">
             <div className="col-xs-12 col-md-4 text-center">
-              <Link to="/checkout">
+              <Link to="/shop">
                 <i className="fas fa-store big-icons"/>
               </Link>
               <div style={{"paddingTop": "20px"}}>See what food we have in our pantry right now and shop for you and your family </div>
             </div>
             <div className="col-xs-4 col-md-4 text-center">
-              <Link to="/checkout">
+              <Link to="/profile">
                 <i className="fas fa-user big-icons"/>
               </Link>
               <div style={{"paddingTop": "20px"}}>Create a profile to help us collect demographics information for reporting purposes for the Food Bank of Central and Eastern NC</div>
