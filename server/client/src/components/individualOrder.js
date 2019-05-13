@@ -37,7 +37,7 @@ class OrderDetails extends Component {
           <ModalHeader>{this.props.order.name}'s Order</ModalHeader>
           <ModalBody>
             <p style={{"textAlign": "right", "fontSize" : "12px", "color": "#A9A9A9"}}>Order placed {moment(this.props.order.createdAt).format("MM/DD/YYYY")}</p>
-            <ListGroup>
+            <ListGroup style={{"padding": "10px"}}>
                {this.renderOrder()}
             </ListGroup>
 
