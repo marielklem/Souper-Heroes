@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 import * as actionTypes from "../actions";
 import Products from "./Products"
 
 import { Collapse, CardBody, Card } from 'reactstrap';
 
 class Categories extends Component {
-  state = {}
+  state = {
+    count: 0
+  }
   //on page load, fetch all products
   componentDidMount = () => {
     this.props.fetchCategories();
@@ -53,12 +56,13 @@ class Categories extends Component {
         return limit.name === category
       })
       if (this.state[category].total >= category1.limit) {
+        let count = this.state.count + 1
         this.setState({
           [category1.name]: {
             color: "red",
             collapse: false,
             total: total
-          }
+          }, count
         })
       } 
     })
@@ -89,10 +93,13 @@ class Categories extends Component {
         <div>...loading</div>
       )
     }
+    if (this.state.count === 7) {
+      return <Redirect to='/checkout' />
+    }
     return this.props.categories.map (category => {
       return (
         <div className="container" key={category._id}>
-          <Card clasName="row" >
+          <Card >
             <div className="container" onClick={() => this.toggleCategory(category.name)}>
               <div className="category-title col-6" >{category.name}</div>
               <span className="col-6 limit" style={{"color": (this.state[category.name] && this.state[category.name].hasOwnProperty('color') ? this.state[category.name].color : "green") }}>{ this.state[category.name] ? this.state[category.name].total : 0}/{category.limit}</span>

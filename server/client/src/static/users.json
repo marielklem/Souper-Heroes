@@ -1,0 +1,7 @@
+{"_id":{"$oid":"5cd8313cee0750387cce2d9a"},"name":"Breakfast","limit":{"$numberInt":"2"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd83155ee0750387cce2d9b"},"name":"Starch","limit":{"$numberInt":"4"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd83164ee0750387cce2d9c"},"name":"Soup","limit":{"$numberInt":"5"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd8316fee0750387cce2d9d"},"name":"Beans","limit":{"$numberInt":"3"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd8317aee0750387cce2d9e"},"name":"Fruit","limit":{"$numberInt":"4"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd83188ee0750387cce2d9f"},"name":"Snacks","limit":{"$numberInt":"5"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cd83195ee0750387cce2da0"},"name":"Vegetables","limit":{"$numberInt":"4"},"color":"green","collapse":"true","total":{"$numberInt":"0"},"__v":{"$numberInt":"0"}}
