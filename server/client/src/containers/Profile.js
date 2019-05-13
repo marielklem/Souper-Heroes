@@ -20,7 +20,7 @@ class Profile extends Component {
       return(<div>...loading</div>)
     }
     return(
-      <div className="container" style={{'padding': '50px'}}>
+      <div className="container" style={{'padding': '20px'}}>
         <div className="view-account">
           <section className="module" >
             <div className="module-inner">

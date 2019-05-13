@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-  /* padding-top: 600px; */
+  padding-top: 75px;
   /* background-color: RGBA(13, 70, 83); */
 }
 
@@ -9,13 +9,22 @@ body {
   background-image: url("../static/grapes.jpg");
 } */
 
+.navvy {
+  /* background-image: url("../static/grapes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; */
+  background-color: RGBA(13, 70, 83, 0.78);
+  min-height: 70px;
+}
+
 .grapes {
   background-image: url("../static/grapes.jpg");
   background-repeat: no-repeat;
   background-size: cover; 
   background-attachment: fixed;
   background-position: center center;
-  min-height: 800px
+  min-height: 1450px
 }
 
 .big-icons {

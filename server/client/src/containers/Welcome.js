@@ -17,7 +17,7 @@ class Welcome extends Component {
     return(
       <React.Fragment>
       <header>
-        <div className="view" style={{"background-image": `url(${grapes})`, "background-repeat": "no-repeat", "backgroundSize": "cover", "backgroundPosition": "center center", "minHeight": "500px"}}>
+        <div className="view" style={{"backgroundImage": `url(${grapes})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover", "backgroundPosition": "center center", "minHeight": "700px"}}>
           <div className="mask rgba-gradient d-flex justify-content-center align-items-center">
             <div className="container">
               <div className="row">
