@@ -78,7 +78,6 @@ class Categories extends Component {
 
   renderModal = () => {
     if (this.state.modal === true) {
-      console.log('duh')
       return (
         <Modal isOpen={this.state.modal} className={this.props.className}>
           <Cart toggle={this.toggleModal}/>

@@ -17,7 +17,6 @@ class Cart extends Component {
   }
 
   render() {
-    console.log('yas')
     return(
       <React.Fragment>  
           <ModalHeader>Cart</ModalHeader>

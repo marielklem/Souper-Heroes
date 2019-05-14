@@ -12,9 +12,7 @@ class Profile extends Component {
   componentDidMount() {
     this.props.fetchUser()
   }
-  toggleActive = (e) => {
-    console.log(e)
-  }
+
   render() {
     if (this.props.user.length === 0) {
       return(<div>...loading</div>)
@@ -37,7 +35,7 @@ class Profile extends Component {
 
                 <nav className="side-menu">
                   <ul className="nav">
-                    <li className={this.state.user} key='1' onClick={this.toggleActive(1)}><a><span className="fa fa-user"></span> Profile</a></li>
+                    <li className={this.state.user}><a><span className="fa fa-user"></span> Profile</a></li>
                     {/* <li className={this.state.orders} onClick={this.toggleActive("orders")}><a><span className="fa fa-credit-card"></span> Previous Orders</a></li>
                     <li className={this.state.messages} onClick={this.toggleActive("messages")}><a><span className="fa fa-envelope"></span> Messages</a></li> */}
                   </ul>

@@ -21,7 +21,6 @@ export const fetchOrders = () => {
 
 //submit an order
 export const submitOrder = (order) => {
-  console.log(order)
   const request = axios.post('/orders/neworder', {
     headers: CORS_HEADERS,
     name: order.name,
