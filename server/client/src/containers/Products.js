@@ -60,6 +60,22 @@ class Products extends Component {
   render() {
     if (this.props.products.length === 0) {
     }
+
+    const items = Object.entries(this.props.cart) 
+    if (items.length === 0 ) {}{
+      const categoryTotal = items.reduce((sum, item) => {
+        const result = this.props.products.find(product => product.name === item[0] )
+        if (Object.keys(result).length > 0)
+          if (result.name === item[0]) {
+            return item[1]+sum
+          } else {
+            return sum
+          }
+        }, 0)
+        console.log(categoryTotal)
+      }
+
+
     const {products, updateTotal} = this.props
     return products.map (item => {
     return (
@@ -69,7 +85,7 @@ class Products extends Component {
           <p className="card-title">{item.name}</p>
           <div className="qty mt-5">
             <span className="minus bg-secondary" onClick={() => this.subtractFromCart(item, updateTotal)}>-</span>
-            <input type="number" className="count" name={item.name} value={this.state.order[item.name] || 0} readOnly />
+            <input type="number" className="count" name={item.name} value={this.props.cart[item.name] || 0} readOnly />
             <span className="plus bg-secondary" onClick={() => this.addToCart(item, updateTotal)}>+</span>
           </div>
         </div>
@@ -79,10 +95,16 @@ class Products extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    cart: state.cart
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     updateCart: (items, category) => dispatch(actionTypes.updateCart(items, category))
   }
 }
 
-export default connect(null, mapDispatchToProps)(Products)  
+export default connect(mapStateToProps, mapDispatchToProps)(Products)  
