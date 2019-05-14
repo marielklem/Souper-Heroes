@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect} from 'react-router-dom'
 import * as actionTypes from "../actions";
 import Products from "./Products";
+import Cart from "../components/cart"
 
-import { Collapse, CardBody, Card, Button } from 'reactstrap';
+import { Collapse, CardBody, Card, Button, Modal } from 'reactstrap';
 
 class Categories extends Component {
   state = {
     count: 0,
-    toast: false
+    modal: false
   }
   //on page load, fetch all products
   componentDidMount = () => {
@@ -29,20 +30,11 @@ class Categories extends Component {
     })
   }
 
-  //toggle toast on each click
-  // toggleToast = () => {
-  //   // this.setState({ toast: !this.state.toast })
-  //     const items = Object.entries(this.props.cart) 
-  //     return (
-  //       items.map (item => {
-  //         return (
-  //           <Toast isOpen='true'>
-  //             <ToastBody>
-  //               {item[1]}{item[0]}
-  //             </ToastBody>
-  //           </Toast>)
-  //     }))
-  // }
+  toggleModal = () => {
+    this.setState({
+      modal: !this.state.modal
+    })
+  }
 
   //toggle each category container open and closed on click
   toggleCategory = (name) => {
@@ -82,6 +74,17 @@ class Categories extends Component {
         })
       } 
     })
+  }
+
+  renderModal = () => {
+    if (this.state.modal === true) {
+      console.log('duh')
+      return (
+        <Modal isOpen={this.state.modal} className={this.props.className}>
+          <Cart toggle={this.toggleModal}/>
+        </Modal>
+      )
+    }
   }
 
   //render cart items as they're added
@@ -145,8 +148,9 @@ class Categories extends Component {
     }
     return (
       <React.Fragment>
+        {this.renderModal()}
         {this.renderCategories()}
-          <Link to='./checkout'><Button className="checkout"><i className="fas fa-shopping-cart"/></Button></Link>
+        <Button className="checkout" onClick={this.toggleModal}><i className="fas fa-shopping-cart"/></Button>
       </React.Fragment>
     )
   }
