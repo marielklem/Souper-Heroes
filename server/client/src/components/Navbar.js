@@ -15,17 +15,13 @@ export default class NavBar extends React.Component {
     isOpen: false,
     cart: '',
     shop: '',
-    profile: ''
+    profile: '',
   }
 
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
-
-  isActive = () =>{
-
   }
 
   render() {
@@ -39,9 +35,9 @@ export default class NavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="navbar-nav mr-auto" navbar>
-              <NavItem className="nav-item"><Link to="/checkout" className="nav-link">View Cart</Link></NavItem>
               <NavItem className="nav-item"><Link to="/profile" className="nav-link">Profile</Link></NavItem>
-              <NavItem  className="`nav-item ${this.state.shop}`"><Link to="/shop" className="nav-link">Shop</Link></NavItem>
+              <NavItem  className="nav-item"><Link to="/shop" className="nav-link">Shop</Link></NavItem>
+              <NavItem className="nav-item"><Link to="/checkout" className="nav-link">View Cart</Link></NavItem>
             </Nav>
           </Collapse>
           </div>

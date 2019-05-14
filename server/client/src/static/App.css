@@ -7,6 +7,25 @@ body {
   background-color: RGBA(13, 70, 83, 0.78);
   min-height: 70px;
 }
+.nav-item {
+  text-align: right;
+}
+
+.nav-cart {
+  color: white;
+  list-style: none;
+}
+
+.checkout {
+  background-color: rgba(224, 130, 131, 1);
+  position:fixed; 
+  top: 70px; 
+  right: 3%;
+}
+
+.toolbar {
+  margin-top: 51px;
+}
 
 .grapes {
   background-image: url("../static/grapes.jpg");

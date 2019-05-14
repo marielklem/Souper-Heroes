@@ -6,7 +6,7 @@ import Categories from "../containers/Categories"
 import Profile from "../containers/Profile"
 import Checkout from "../containers/Checkout"
 import Orders from "../containers/Orders"
-import Welcome from "../containers/Welcome"
+import Welcome from "../components/welcome"
 
 function App() {
   

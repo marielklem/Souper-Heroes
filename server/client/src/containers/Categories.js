@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import * as actionTypes from "../actions";
-import Products from "./Products"
+import Products from "./Products";
 
-import { Collapse, CardBody, Card } from 'reactstrap';
+import { Collapse, CardBody, Card, Button } from 'reactstrap';
 
 class Categories extends Component {
   state = {
-    count: 0
+    count: 0,
+    toast: false
   }
   //on page load, fetch all products
   componentDidMount = () => {
@@ -27,6 +28,21 @@ class Categories extends Component {
       )
     })
   }
+
+  //toggle toast on each click
+  // toggleToast = () => {
+  //   // this.setState({ toast: !this.state.toast })
+  //     const items = Object.entries(this.props.cart) 
+  //     return (
+  //       items.map (item => {
+  //         return (
+  //           <Toast isOpen='true'>
+  //             <ToastBody>
+  //               {item[1]}{item[0]}
+  //             </ToastBody>
+  //           </Toast>)
+  //     }))
+  // }
 
   //toggle each category container open and closed on click
   toggleCategory = (name) => {
@@ -68,6 +84,18 @@ class Categories extends Component {
     })
   }
 
+  //render cart items as they're added
+  renderCart() {
+    const items = Object.entries(this.props.cart) 
+    return items.map (item => {
+      return (
+        <li className="list-group-item d-flex justify-content-between align-items-center" key={item[0]}>{item[0]}
+          <span className="badge badge-primary badge-pill">{item[1]}</span>
+        </li>
+      )
+    })
+  }
+
   //for each category, add all matching products
   renderProducts(category) {
     if (this.props.inventory.length === 0) {
@@ -86,16 +114,8 @@ class Categories extends Component {
       </CardBody>
     )
   }
-
-  render() {
-    if (this.props.inventory.length === 0) {
-      return (
-        <div>...loading</div>
-      )
-    }
-    if (this.state.count === 7) {
-      return <Redirect to='/checkout' />
-    }
+  //render each category
+  renderCategories() {
     return this.props.categories.map (category => {
       return (
         <div className="container" key={category._id}>
@@ -113,12 +133,30 @@ class Categories extends Component {
       )
     })
   }
+
+  render() {
+    if (this.props.inventory.length === 0) {
+      return (
+        <div>...loading</div>
+      )
+    }
+    if (this.state.count === 7) {
+      return <Redirect to='/checkout' />
+    }
+    return (
+      <React.Fragment>
+        {this.renderCategories()}
+          <Link to='./checkout'><Button className="checkout"><i className="fas fa-shopping-cart"/></Button></Link>
+      </React.Fragment>
+    )
+  }
 }
 
 const mapStateToProps = state => {
   return { 
     inventory: state.products,
-    categories: state.categories
+    categories: state.categories,
+    cart: state.cart
   };
 }
 
