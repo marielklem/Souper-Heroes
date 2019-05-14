@@ -55,10 +55,10 @@ class Checkout extends Component {
             <li className="list-group-item list-group-item-info align-items-center">Your Order</li>
               {this.renderCart()}
             <li className="list-group-item">
-                <button type="submit" onClick={(e) => this.checkoutOrder(e)} className="btn btn-info btn-lg btn-block"><i className="fas fa-shopping-cart" style={{'padding': '5px'}} />Check Out</button>
+              <button type="submit" onClick={(e) => this.checkoutOrder(e)} className="btn btn-info btn-lg btn-block"><i className="fas fa-shopping-cart" style={{'padding': '5px'}} />Check Out</button>
             </li>
           </ul>
-      </div>
+        </div>
       </div>
     )
   }

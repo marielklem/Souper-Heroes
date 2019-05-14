@@ -50,13 +50,13 @@ class Orders extends Component {
     return(
       <React.Fragment>
         {this.showModal()}
-        <div className="container">
+        <div className="container" style={{"padding": "20px"}}>
           <div className="view-account">
             <section className="module">
               <div className="module-inner">
                 <div className="container">
-                  <div className="row">
-                    <h1>Outstanding Orders</h1>
+                  <div className="row" style={{"padding": "20px", "backgroundColor": "#bee5eb", "verticalAlign": "center", "fontFamily": 'Oswald'}}>
+                    <h4>Pending Orders</h4>
                   </div>
                 <div className="container">
                   <table className="table table-hover">
