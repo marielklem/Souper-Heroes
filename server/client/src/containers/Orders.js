@@ -33,7 +33,7 @@ class Orders extends Component {
     if (this.props.orders.orders){
       return this.props.orders.orders.map (order => {
         return (
-          <tr onClick={() => this.toggleDetails(order)} key={order._id}>
+          <tr onClick={() => this.toggleDetails(order)} style={{"cursor": "pointer"}} key={order._id}>
             <td>{moment(order.createdAt).format("MM/DD/YYYY")}</td>
             <td>{order.name}</td>
             <td>{order.status}</td>

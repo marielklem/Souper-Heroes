@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from "../actions";
-import grapes from "../static/grapes.jpg"
-import feed from "../static/end-alliance2.png"
+import grapes from "../static/grapes2.png"
+import feed from "../static/network2.png"
 import {Link} from 'react-router-dom';
 
 class Welcome extends Component {
@@ -22,9 +22,11 @@ class Welcome extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5" style={{"color": "#eee"}}>
-                  <h3 className="h1-responsive font-weight-bold mt-sm-5">Welcome to Souper Heroes!</h3>
+                  <h3 className="h1-responsive font-weight-bold mt-sm-5 text-center">Welcome to Souper Heroes!</h3>
                   <hr style={{"color": 'white'}}/>
-                  <h6 className="mb-4">Souper Heroes starts with the idea that a client can shop from anywhere and pick up pre-packed bags at times that align with their schedule in order to connect busy clients with food resources more efficiently. Clients can shop current inventory and volunteers will be notified when food bags have been requested. Limits can be made to maintain inventory, while tracking demographics information and utilization for reporting purposes.</h6>
+                  <h6 className="mb-4 text-center">In 2017, an estimated 1 in 8 Americans were food insecure, equating to 40 million Americans including more than 12 million children. The U.S. Department of Agriculture (USDA) defines food insecurity as a lack of consistent access to enough food for an active, healthy life. </h6>
+                  <br />
+                  <p className="mb-4 text-center">Souper Heroes starts with the idea that a client can shop from anywhere and pick up pre-packed bags at times that align with their schedule in order to connect busy clients with food resources more efficiently. Clients can shop current inventory and volunteers will be notified when food bags have been requested. Limits can be made to maintain inventory, while tracking demographics information and utilization for reporting purposes.</p>
                 </div>
                 <div className="col-md-6 col-xl-5 mt-xl-5 end-network">
                   <img src={feed} alt="" className="img-responsive"/>

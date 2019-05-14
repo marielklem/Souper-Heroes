@@ -63,7 +63,7 @@ class Products extends Component {
     const {products, updateTotal} = this.props
     return products.map (item => {
     return (
-      <li className="col-6 col-sm-6 col-md-4 col-lg-2 col-xl-2" key={item._id}>
+      <li className="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2" key={item._id}>
         <div className="card">
           <img className="card-img-top" src={item.image} alt="food item" />
           <p className="card-title">{item.name}</p>

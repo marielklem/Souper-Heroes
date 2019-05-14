@@ -43,11 +43,11 @@ class Profile extends Component {
               </div>
 
               <div className="content-panel">
-                <h2 className="title">Profile<span className="badge badge-warning badge-pill" style={{"marginLeft": "10px"}}>CLIENT</span></h2>
+                <h2 className="title text-sm-center">Profile<span className="badge badge-warning badge-pill" style={{"marginLeft": "10px", "textAlign":"center"}}>CLIENT</span></h2>
                   <form className="form-horizontal">
                     <fieldset className="fieldset container">
                       <h3 className="fieldset-title">Personal Info</h3>
-                      <div className="form-group row avatar">
+                      {/* <div className="form-group row avatar">
                         <figure className="figure col-lg-2 col-md-2 col-sm-3 col-xs-12">
                           <img className="img-responsive img-thumbnail" src={this.props.user.image} alt=""/>
                         </figure>
@@ -57,7 +57,7 @@ class Profile extends Component {
                             <label className="custom-file-label" htmlFor="profilepic">Choose file</label>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
           
                       <div className="form-group row">
                       <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Full Name</label>
@@ -92,11 +92,11 @@ class Profile extends Component {
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Race</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
                           <select id="inputRace" className="form-control form-control-sm">
-                            <option selected>{this.props.user.demographics.race}</option>
+                            {/* <option selected>{this.props.user.demographics.race}</option> */}
                             <option>Asian</option>
                             <option>African American</option>
                             <option>Hispanic/Latino</option>
-                            <option>White</option>
+                            <option selected>White</option>
                             <option>biracial</option>
                           </select>
                         </div>
@@ -105,9 +105,9 @@ class Profile extends Component {
                         <label className="col-md-2  col-sm-3 col-xs-12 control-label col-form-label-sm">Gender</label>
                         <div className="col-md-10 col-sm-9 col-xs-12">
                         <select id="inputRace" className="form-control form-control-sm">
-                            <option selected>{this.props.user.demographics.gender}</option>
+                            {/* <option selected>{this.props.user.demographics.gender}</option> */}
                             <option>male</option>
-                            <option>female</option>
+                            <option selected>female</option>
                             <option>Non-binary/ third gender</option>
                             <option>Prefer not to say</option>
                           </select>
@@ -140,11 +140,11 @@ class Profile extends Component {
                       </div>
                     </fieldset>
                     <hr />
-                    <div className="form-group container">
+                    {/* <div className="form-group container">
                       <div className="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0 text-center">
                         <input className="btn btn-info center-block" style={{"width": "50%"}}type="submit" value="Update Profile"/>
                       </div>
-                    </div>
+                    </div> */}
                   </form>
               </div>
             </div>
