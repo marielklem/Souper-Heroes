@@ -65,6 +65,14 @@ body {
   height: 40px;
 }
 
+.card-body {
+  padding: .25rem
+}
+
+.col-6 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 .img-logo {
   width: 30px;
 }

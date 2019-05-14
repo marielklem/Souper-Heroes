@@ -3,8 +3,9 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const keys = require ('./config/keys');
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(keys.MONGODB_URI, {
   useNewUrlParser: true
 })
 
